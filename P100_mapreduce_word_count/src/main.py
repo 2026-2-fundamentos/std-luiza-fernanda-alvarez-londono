@@ -122,7 +122,7 @@ else:
     os.makedirs(SUBMISSION_FOLDER)
 
 for file in glob.glob(f"{OUTPUT_FOLDER}/*"):
-    shutil.copy2(file, SUBMISSION_FOLDER)
+    shutil.copy2(file, SUBMISSION_FOLDER) 
 
 # Reporte de tiempo de ejecución
 # -----------------------------------------------------------------------------
