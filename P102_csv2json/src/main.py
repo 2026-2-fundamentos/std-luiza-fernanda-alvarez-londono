@@ -2,7 +2,7 @@ import csv
 import json
 from pathlib import Path
 
-
+ 
 PROJECT_FOLDER = Path(__file__).resolve().parents[1]
 INPUT_FILE = PROJECT_FOLDER / "data" / "drivers.csv"
 OUTPUT_FILE = PROJECT_FOLDER / "submission" / "drivers.json"
