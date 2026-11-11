@@ -70,14 +70,15 @@ jobs:
           # Activity discovery
           # -----------------------------------------------------
 
-          activity_prefixes = ("PRE_", "LAB_")
-
           activities = sorted(
               (
                   directory
                   for directory in repository_root.iterdir()
                   if directory.is_dir()
                   and directory.name.startswith(activity_prefixes)
+                  and directory.name[:1] in ("L", "P")
+                  and directory.name[1:4].isdigit()
+                  and directory.name[4:5] == "_"
                   and (directory / "tests").is_dir()
               ),
               key=lambda directory: directory.name,
@@ -282,6 +283,3 @@ jobs:
                   print(f"- {activity}")
 
               sys.exit(1)
-
-          print("All activities passed.")
-          PY
